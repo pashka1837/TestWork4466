@@ -1,14 +1,17 @@
 "use client";
-import styles from "./HomeComp.module.scss";
+import styles from "@/styles/Base.module.scss";
 import { useActionState } from "react";
 import { SearchForm } from "./SearchForm";
 import { WeatherResult } from "./WeatherResult";
 import { search } from "./action";
 import dynamic from "next/dynamic";
-import { Loader } from "../Loader/Loader";
+import { Loader } from "../../../Components/Loader/Loader";
 
 const ErrorToast = dynamic(
-  () => import("../Toast/ErrorToast").then((mod) => mod.ErrorToast),
+  () =>
+    import("../../../Components/Toast/ErrorToast").then(
+      (mod) => mod.ErrorToast
+    ),
   { ssr: false }
 );
 

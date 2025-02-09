@@ -1,5 +1,3 @@
-import styles from "./HomeComp.module.scss";
-
 type SearchFormProps = {
   searchAction: (payload: FormData) => void;
   pending: boolean;
@@ -11,7 +9,7 @@ export function SearchForm({ searchAction, pending }: SearchFormProps) {
       action={searchAction}
       className="container d-flex align-items-end justify-content-center gap-3"
     >
-      <div className={`vstack ${styles.searchBar}`}>
+      <div className={`vstack `}>
         <label htmlFor="search" className="form-label">
           Название города
         </label>

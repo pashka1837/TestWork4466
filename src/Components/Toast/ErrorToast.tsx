@@ -1,9 +1,10 @@
-// import bootstrap from "bootstrap";
 import { useEffect } from "react";
-import { FormStateType } from "../Home/action";
 
 type ErrorToastProps = {
-  formState: FormStateType;
+  formState: {
+    errorMsg: string | null;
+    data: any;
+  };
 };
 
 export function ErrorToast({ formState }: ErrorToastProps) {

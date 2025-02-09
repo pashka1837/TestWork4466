@@ -9,6 +9,7 @@ import {
   useEffect,
 } from "react";
 import { useStore } from "zustand";
+import { getFavFromLocal } from "@/utils";
 
 export type FavStoreApi = ReturnType<typeof createFavStore>;
 
@@ -22,12 +23,13 @@ export interface FavStoreProviderProps {
 
 export const FavStoreProvider = ({ children }: FavStoreProviderProps) => {
   const storeRef = useRef<FavStoreApi>(null);
+
   if (!storeRef.current) {
     storeRef.current = createFavStore();
   }
 
   return (
-    <FavStoreContext.Provider value={storeRef.current}>
+    <FavStoreContext.Provider value={storeRef.current!}>
       <SetInitialState />
       {children}
     </FavStoreContext.Provider>
@@ -48,17 +50,6 @@ function SetInitialState() {
   const { setInitial } = useFavStore((state) => state);
 
   useEffect(() => {
-    function getFavFromLocal() {
-      const favLocal = localStorage.getItem("favs");
-      if (!favLocal) return [];
-      const data = JSON.parse(favLocal);
-      if (!Array.isArray(data)) return [];
-      if (data.length && (!("name" in data.at(0)) || !("id" in data.at(0))))
-        return [];
-
-      return data as FavCity[];
-    }
-
     setInitial(getFavFromLocal());
   }, []);
   return null;

@@ -19,7 +19,7 @@ export const createFavStore = (initState: FavState = defaultInitState) => {
       }),
     removeFav: (id) =>
       set((state) => {
-        const newState = state.cities.filter((oldC) => oldC.id === id);
+        const newState = state.cities.filter((oldC) => oldC.id !== id);
         localStorage.setItem("favs", JSON.stringify(newState));
         return {
           cities: newState,
