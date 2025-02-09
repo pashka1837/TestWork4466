@@ -2,7 +2,6 @@
 @import "../../node_modules/bootstrap/scss/variables";
 .outer {
   height: calc(100dvh - $nav-link-height - 2 * $navbar-padding-y);
-  // overflow-y: hidden;
 }
 
 .truncateText {

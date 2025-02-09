@@ -1,0 +1,21 @@
+@media (width <576px) {
+  .dailyCont {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+}
+
+@media (width >= 576px) {
+  .dailyCont {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    justify-content: center;
+  }
+}
+
+@media (width >= 1200px) {
+  .dailyCont {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}

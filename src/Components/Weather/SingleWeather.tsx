@@ -1,6 +1,7 @@
 import styles from "@/styles/Base.module.scss";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const imgUrl = process.env.NEXT_PUBLIC_IMG_URL;
 
@@ -10,21 +11,29 @@ type SingleWeatherProps = {
 
 export function SingleWeather({ data }: SingleWeatherProps) {
   return (
-    <div
-      className="container-lg border border-primary rounded
-        p-3 p-lg-4 d-flex flex-column
-        flex-md-row column-gap-3
-        justify-content-center"
+    <Link href={`/${data.id}`} passHref legacyBehavior>
+      <WeatherComp data={data} />
+    </Link>
+  );
+}
+
+type WeatherCompProps = {
+  data: CurrWeatherResType;
+  href?: string;
+};
+
+function WeatherComp({ data, href }: WeatherCompProps) {
+  return (
+    <a
+      href={href}
+      className="container-lg border border-primary rounded p-3 p-lg-4 d-flex flex-column
+flex-md-row column-gap-3 justify-content-center text-decoration-none text-reset"
     >
-      {/* <div
-      className="container-lg border border-primary rounded 
-         p-3 p-lg-4 row "
-     > */}
       <div className="hstack gap-md-2 col-md-3 justify-content-between">
         <h3 className="text-nowrap">{data.name}</h3>
         {data.weather[0] && (
           <Image
-            className={`${styles.weatherImg} ms-auto ms-md-0`}
+            className={`ms-auto ms-md-0`}
             src={`${imgUrl}/${data.weather[0].icon}.png`}
             alt="картинка погоды"
             width={60}
@@ -55,6 +64,6 @@ export function SingleWeather({ data }: SingleWeatherProps) {
         <p className={`${styles.truncateText} fs-5 mb-0 fw-bold`}>Влажность:</p>
         <p className="fs-5 mb-0 text-nowrap">{data.main.humidity}%</p>
       </div>
-    </div>
+    </a>
   );
 }
