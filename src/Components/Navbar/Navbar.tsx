@@ -7,7 +7,7 @@ import { links } from "../Utils/links";
 export function Navbar() {
   const pathname = usePathname();
   return (
-    <nav className="navbar navbar-expand-lg  bg-primary" data-bs-theme="dark">
+    <nav className="navbar navbar-expand-sm  bg-primary" data-bs-theme="dark">
       <div className="container-fluid">
         <button
           className="navbar-toggler"
