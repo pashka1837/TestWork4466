@@ -15,7 +15,7 @@ export function SearchForm({ searchAction, pending }: SearchFormProps) {
         </label>
         <input
           required
-          pattern={`^[a-zA-Z\u0401\u0451\u0410-\u044f]{1,10}[\\s\\-]?[a-zA-Z\u0401\u0451\u0410-\u044f]{1,10}$`}
+          pattern={`^[a-zA-Z\u0401\u0451\u0410-\u044f]{1,10}[\\s\\-]?[a-zA-Z\u0401\u0451\u0410-\u044f]{0,10}$`}
           type="text"
           className="form-control"
           id="search"

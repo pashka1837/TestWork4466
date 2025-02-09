@@ -38,7 +38,6 @@ export function HomeComp() {
       {formState.errorMsg && <ErrorToast formState={formState} />}
       <SearchForm searchAction={searchAction} pending={pending} />
       {pending && <Loader />}
-
       {currentSearch && <WeatherResult data={currentSearch} />}
     </div>
   );

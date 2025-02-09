@@ -1,6 +1,6 @@
 import styles from "@/styles/Base.module.scss";
 
-import { fetchDaily } from "../Components/Daily/action";
+import { fetchDaily } from "./action";
 import { DailyWheather } from "../Components/Daily/Daily";
 
 export default async function CityPage({
