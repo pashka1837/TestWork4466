@@ -1,11 +1,12 @@
 // import bootstrap from "bootstrap";
 import { useEffect } from "react";
+import { FormStateType } from "../Home/action";
 
 type ErrorToastProps = {
-  msg: string;
+  formState: FormStateType;
 };
 
-export function ErrorToast({ msg }: ErrorToastProps) {
+export function ErrorToast({ formState }: ErrorToastProps) {
   useEffect(() => {
     async function showToast() {
       const { Toast } = await import("bootstrap");
@@ -13,7 +14,7 @@ export function ErrorToast({ msg }: ErrorToastProps) {
       myToast.show();
     }
     showToast();
-  });
+  }, [formState]);
   return (
     <div className="toast-container position-absolute top-0 start-50 translate-middle-x pt-4">
       <div
@@ -24,7 +25,7 @@ export function ErrorToast({ msg }: ErrorToastProps) {
         aria-atomic="true"
       >
         <div className="d-flex">
-          <div className="toast-body">{msg}</div>
+          <div className="toast-body">{formState.errorMsg}</div>
           <button
             type="button"
             className="btn-close me-2 m-auto"

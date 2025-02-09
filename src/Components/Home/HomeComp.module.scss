@@ -4,3 +4,23 @@
   height: calc(100dvh - $nav-link-height - 2 * $navbar-padding-y);
   overflow-y: hidden;
 }
+
+.truncateText {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// @media (width >= 768px) {
+//   .weatherImg {
+//     width: 60px;
+//     height: 60px;
+//   }
+// }
+
+// @media (width < 768px) {
+//   .weatherImg {
+//     width: 60px;
+//     height: 60px;
+//   }
+// }

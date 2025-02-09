@@ -20,9 +20,10 @@ export function HomeComp() {
     search,
     initFormState
   );
+
   return (
     <div className={`${styles.outer} container-fluid p-2 p-md-3 p-lg-4`}>
-      {formState.errorMsg && <ErrorToast msg={formState.errorMsg} />}
+      {formState.errorMsg && <ErrorToast formState={formState} />}
       <SearchForm searchAction={searchAction} pending={pending} />
       <WeatherResult formLoad={pending} data={formState.data} />
     </div>

@@ -1,15 +1,22 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  sassOptions: {
-    // silenceDeprecations: true,
-    // silenceDeprecations: [
-    //   "mixed-decls",
-    //   "color-functions",
-    //   "global-builtin",
-    //   "import",
-    // ],
-    // quietDeps: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "openweathermap.org",
+        port: "",
+        pathname: "/img/wn/**",
+        search: "",
+      },
+    ],
+  },
+  logging: {
+    fetches: {
+      fullUrl: true,
+      hmrRefreshes: true,
+    },
   },
 };
 
