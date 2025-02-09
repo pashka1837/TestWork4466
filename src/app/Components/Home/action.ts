@@ -20,7 +20,7 @@ export async function search(
     );
     if (weathRes.status !== 200)
       return {
-        errorMsg: "Что то не так с соединением, попробуйте еще раз",
+        errorMsg: "Неверные данные, попробуйте еще раз",
         data: null,
       };
     if (!weathRes.data)

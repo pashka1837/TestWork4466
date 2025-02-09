@@ -13,7 +13,7 @@ export async function fetchDaily(id: string) {
 
     if (dailyRes.status !== 200)
       return {
-        errorMsg: "Что то не так с соединением, попробуйте обновить страницу",
+        errorMsg: "Неверные данные, попробуйте еще раз",
         data: null,
       };
     if (!dailyRes.data)

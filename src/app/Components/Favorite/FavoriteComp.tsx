@@ -8,6 +8,7 @@ import { fetchFav } from "./action";
 import dynamic from "next/dynamic";
 import { Loader } from "@/Components/Loader/Loader";
 import { SingleWeather } from "@/Components/Weather/SingleWeather";
+import { RemoveFavBtn } from "./RemoveFavBtn";
 
 const ErrorToast = dynamic(
   () =>
@@ -59,22 +60,5 @@ export function FavoriteComp() {
       )}
       {}
     </div>
-  );
-}
-
-type RemoveFavBtnProps = {
-  id: number;
-};
-
-function RemoveFavBtn({ id }: RemoveFavBtnProps) {
-  const { removeFav } = useFavStore((state) => state);
-
-  function handleClick() {
-    removeFav(id);
-  }
-  return (
-    <button onClick={handleClick} className="btn btn-danger mb-2">
-      Удалить из избранного
-    </button>
   );
 }

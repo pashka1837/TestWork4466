@@ -16,7 +16,7 @@ export async function fetchFav(cities: FavCity[]) {
     const citiesRes = await Promise.all(citiesPromis);
     if (citiesRes[0].status !== 200)
       return {
-        errorMsg: "Что то не так с соединением, попробуйте еще раз",
+        errorMsg: "Неверные данные, попробуйте еще раз",
         data: null,
       };
     if (!citiesRes[0].data)
