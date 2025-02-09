@@ -3,8 +3,9 @@ import styles from "./HomeComp.module.scss";
 import { useActionState } from "react";
 import { SearchForm } from "./SearchForm";
 import { WeatherResult } from "./WeatherResult";
-import { FormStateType, search } from "./action";
+import { search } from "./action";
 import dynamic from "next/dynamic";
+import { Loader } from "../Loader/Loader";
 
 const ErrorToast = dynamic(
   () => import("../Toast/ErrorToast").then((mod) => mod.ErrorToast),
@@ -12,7 +13,7 @@ const ErrorToast = dynamic(
 );
 
 export function HomeComp() {
-  const initFormState: FormStateType = {
+  const initFormState: SearchFormStateType = {
     errorMsg: null,
     data: null,
   };
@@ -25,7 +26,8 @@ export function HomeComp() {
     <div className={`${styles.outer} container-fluid p-2 p-md-3 p-lg-4`}>
       {formState.errorMsg && <ErrorToast formState={formState} />}
       <SearchForm searchAction={searchAction} pending={pending} />
-      <WeatherResult formLoad={pending} data={formState.data} />
+      {pending && <Loader />}
+      {formState.data && <WeatherResult data={formState.data} />}
     </div>
   );
 }

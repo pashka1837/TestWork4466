@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./globals.css";
 import { BootstrapClient } from "@/Components/Theme/Bootstrap";
 import { Navbar } from "@/Components/Navbar/Navbar";
+import { FavStoreProvider } from "@/Components/FavStoreProvider/FavStoreProvider";
 
 export const metadata: Metadata = {
   title: "Weather App",
@@ -19,7 +20,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         <BootstrapClient />
-        {children}
+        <FavStoreProvider>{children}</FavStoreProvider>
       </body>
     </html>
   );

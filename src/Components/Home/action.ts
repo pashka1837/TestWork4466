@@ -2,18 +2,13 @@
 
 import axios from "axios";
 
-export type FormStateType = {
-  errorMsg: string | null;
-  data: CurrWeatherResType | null;
-};
-
 const api = process.env.API_KEY;
 const baseUrl = process.env.BASE_URL;
 
 export async function search(
-  formState: FormStateType,
+  formState: SearchFormStateType,
   formData: FormData
-): Promise<FormStateType> {
+): Promise<SearchFormStateType> {
   formState.errorMsg = null;
   const search = formData.get("search");
   if (!search || typeof search !== "string")

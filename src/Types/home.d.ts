@@ -1,3 +1,8 @@
+type SearchFormStateType = {
+  errorMsg: string | null;
+  data: CurrWeatherResType | null;
+};
+
 type GeoResType = {
   name: string;
   local_names: {
