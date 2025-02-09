@@ -2,11 +2,16 @@ import { createStore } from "zustand/vanilla";
 
 export const defaultInitState: FavState = {
   cities: [],
+  currentSearch: null,
 };
 
 export const createFavStore = (initState: FavState = defaultInitState) => {
   return createStore<FavStore>()((set) => ({
     ...initState,
+    setCurrSearch: (data) =>
+      set(() => {
+        return { currentSearch: data };
+      }),
     setInitial: (cities) =>
       set(() => {
         return { cities };

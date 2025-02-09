@@ -5,10 +5,10 @@ import axios from "axios";
 const api = process.env.API_KEY;
 const baseUrl = process.env.BASE_URL;
 
-export async function fetchDaily(id: string) {
+export async function fetchDaily(name: string) {
   try {
     const dailyRes = await axios.get(
-      `${baseUrl}/data/2.5/forecast?id=${id}&cnt=32&appid=${api}&units=metric`
+      `${baseUrl}/data/2.5/forecast?q=${name}&cnt=32&appid=${api}&units=metric`
     );
 
     if (dailyRes.status !== 200)

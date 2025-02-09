@@ -20,7 +20,7 @@ export function ErrorToast({ formState }: ErrorToastProps) {
     <div className="toast-container position-absolute top-0 start-50 translate-middle-x pt-4">
       <div
         id="errorToast"
-        className="toast text-bg-danger"
+        className="toast bg-danger-subtle"
         role="alert"
         aria-live="assertive"
         aria-atomic="true"

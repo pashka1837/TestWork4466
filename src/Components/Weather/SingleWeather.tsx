@@ -11,7 +11,10 @@ type SingleWeatherProps = {
 
 export function SingleWeather({ data }: SingleWeatherProps) {
   return (
-    <Link href={`/${data.id}`} passHref legacyBehavior>
+    <Link
+      href={`/${data.name.toLowerCase()}`}
+      className="text-decoration-none text-reset"
+    >
       <WeatherComp data={data} />
     </Link>
   );
@@ -19,15 +22,14 @@ export function SingleWeather({ data }: SingleWeatherProps) {
 
 type WeatherCompProps = {
   data: CurrWeatherResType;
-  href?: string;
 };
 
-function WeatherComp({ data, href }: WeatherCompProps) {
+function WeatherComp({ data }: WeatherCompProps) {
   return (
-    <a
-      href={href}
-      className="container-lg border border-primary rounded p-3 p-lg-4 d-flex flex-column
-flex-md-row column-gap-3 justify-content-center text-decoration-none text-reset"
+    <div
+      className="container-lg border border-primary 
+      rounded p-3 p-lg-4 d-flex flex-column
+flex-md-row column-gap-3 justify-content-center"
     >
       <div className="hstack gap-md-2 col-md-3 justify-content-between">
         <h3 className="text-nowrap">{data.name}</h3>
@@ -64,6 +66,6 @@ flex-md-row column-gap-3 justify-content-center text-decoration-none text-reset"
         <p className={`${styles.truncateText} fs-5 mb-0 fw-bold`}>Влажность:</p>
         <p className="fs-5 mb-0 text-nowrap">{data.main.humidity}%</p>
       </div>
-    </a>
+    </div>
   );
 }

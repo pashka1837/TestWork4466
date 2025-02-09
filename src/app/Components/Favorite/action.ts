@@ -8,7 +8,7 @@ const baseUrl = process.env.BASE_URL;
 export async function fetchFav(cities: FavCity[]) {
   const citiesPromis = cities.map((city) =>
     axios.get(
-      `${baseUrl}/data/2.5/weather?id=${city.id}&appid=${api}&units=metric`
+      `${baseUrl}/data/2.5/weather?q=${city.name}&appid=${api}&units=metric`
     )
   );
 

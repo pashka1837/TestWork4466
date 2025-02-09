@@ -8,8 +8,8 @@ export default async function CityPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const cityId = (await params).id;
-  const res = await fetchDaily(cityId);
+  const cityName = (await params).id;
+  const res = await fetchDaily(cityName);
   if (res.errorMsg)
     return (
       <div

@@ -1,10 +1,11 @@
 export function Loader() {
   return (
     <div
-      className="container d-flex align-items-center justify-content-center"
-      style={{ height: "100%" }}
+      className="position-absolute top-0 start-0 end-0 bottom-0 d-flex align-items-center justify-content-center"
+      style={{
+        backgroundColor: "rgba(var(--bs-primary-rgb), 0.2",
+      }}
     >
-      {/* // <div className="position-absolute"> */}
       <div
         className="spinner-border text-primary spinner-border-xl"
         role="status"
