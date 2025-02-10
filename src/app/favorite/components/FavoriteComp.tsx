@@ -58,7 +58,6 @@ export function FavoriteComp() {
       ) : (
         <h4>У вас пока нет избранных городов</h4>
       )}
-      {}
     </div>
   );
 }
