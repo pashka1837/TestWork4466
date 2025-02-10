@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/styles/Base.module.scss";
+import styles from "@/Styles/Base.module.scss";
 
 import { useFavStore } from "@/Components/FavStoreProvider/FavStoreProvider";
 import { useEffect, useState } from "react";

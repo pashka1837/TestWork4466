@@ -1,4 +1,4 @@
-import styles from "@/styles/DailyWeather.module.scss";
+import styles from "@/Styles/DailyWeather.module.scss";
 
 import { HourlyWheather } from "./Hourly";
 

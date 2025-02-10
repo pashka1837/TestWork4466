@@ -1,4 +1,4 @@
-import styles from "@/styles/Base.module.scss";
+import styles from "@/Styles/Base.module.scss";
 
 import Image from "next/image";
 import Link from "next/link";

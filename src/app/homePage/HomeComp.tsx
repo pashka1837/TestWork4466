@@ -1,5 +1,5 @@
 "use client";
-import styles from "@/styles/Base.module.scss";
+import styles from "@/Styles/Base.module.scss";
 import { useActionState, useEffect } from "react";
 import { SearchForm } from "./SearchForm";
 import { WeatherResult } from "./WeatherResult";

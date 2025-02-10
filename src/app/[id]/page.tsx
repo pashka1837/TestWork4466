@@ -1,4 +1,4 @@
-import styles from "@/styles/Base.module.scss";
+import styles from "@/Styles/Base.module.scss";
 
 import { fetchDaily } from "./action";
 import { DailyWheather } from "./components/Daily";

@@ -1,7 +1,7 @@
 "use client";
 
 import "bootstrap/dist/css/bootstrap.css";
-import styles from "@/styles/Base.module.scss";
+import styles from "@/Styles/Base.module.scss";
 
 type GlobalErrorProps = {
   reset: () => void;
