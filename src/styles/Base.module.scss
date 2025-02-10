@@ -1,5 +1,6 @@
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
+
 .outer {
   min-height: calc(100dvh - $nav-link-height - 2 * $navbar-padding-y);
   position: relative;

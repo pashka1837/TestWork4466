@@ -51,6 +51,6 @@ function SetInitialState() {
 
   useEffect(() => {
     setInitial(getFavFromLocal());
-  }, []);
+  }, [setInitial]);
   return null;
 }

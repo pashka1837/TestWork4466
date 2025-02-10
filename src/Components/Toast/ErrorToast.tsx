@@ -3,7 +3,7 @@ import { useEffect } from "react";
 type ErrorToastProps = {
   formState: {
     errorMsg: string | null;
-    data: any;
+    data: unknown;
   };
 };
 

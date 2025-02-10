@@ -10,8 +10,7 @@ export function HourlyWheather({ data }: HourlyWheatherProps) {
   return (
     <div
       className="d-flex flex-row-reverse flex-sm-column align-items-center
-     border border-primary p-3 "
-      style={{ minWidth: "100px" }}
+     border border-primary p-3"
     >
       <p className="fs-5 mb-0 text-primary d-none d-sm-block">
         {data.dt_txt.split(" ").at(1)}

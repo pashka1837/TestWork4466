@@ -4,7 +4,7 @@ import styles from "@/styles/Base.module.scss";
 
 import { useFavStore } from "@/Components/FavStoreProvider/FavStoreProvider";
 import { useEffect, useState } from "react";
-import { fetchFav } from "./action";
+import { fetchFav } from "../action";
 import dynamic from "next/dynamic";
 import { Loader } from "@/Components/Loader/Loader";
 import { SingleWeather } from "@/Components/Weather/SingleWeather";

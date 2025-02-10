@@ -5,14 +5,12 @@ import { SearchForm } from "./SearchForm";
 import { WeatherResult } from "./WeatherResult";
 import { search } from "./action";
 import dynamic from "next/dynamic";
-import { Loader } from "../../../Components/Loader/Loader";
 import { useFavStore } from "@/Components/FavStoreProvider/FavStoreProvider";
+import { Loader } from "@/Components/Loader/Loader";
 
 const ErrorToast = dynamic(
   () =>
-    import("../../../Components/Toast/ErrorToast").then(
-      (mod) => mod.ErrorToast
-    ),
+    import("../../Components/Toast/ErrorToast").then((mod) => mod.ErrorToast),
   { ssr: false }
 );
 
@@ -31,7 +29,7 @@ export function HomeComp() {
   useEffect(() => {
     if (!formState.data || formState.errorMsg) return;
     setCurrSearch(formState.data);
-  }, [formState]);
+  }, [formState, setCurrSearch]);
 
   return (
     <div className={`${styles.outer} container-fluid p-2 p-md-3 p-lg-4 `}>
